@@ -1,0 +1,165 @@
+ #=============================================================#
+ #=================      BASIC FUNCTIONS     ==================#
+ #=============================================================#
+ 
+ #====  GLOBAL CONFIG   ====#
+
+ homeassistant:
+    name: Home
+    temperature_unit: C
+    time_zone: GB
+    latitude: !secret HOME_LATITUDE
+    longitude: !secret HOME_LONGITUDE
+    elevation: 29
+    customize: !include_dir_merge_named customisations
+        
+ #====   HTTP    ====#
+
+ http:
+    api_password: !secret HTTP_PASSWORD
+  
+ #====   ZONES    ====#
+  
+ zone:
+  - name: Home
+    latitude: !secret HOME_LATITUDE
+    longitude: !secret HOME_LONGITUDE
+    radius: 20
+    icon: mdi:home
+        
+  - name: Nicky's Work
+    latitude: !secret NICKYS_WORK_LATITUDE
+    longitude: !secret NICKYS_WORK_LONGITUDE
+    radius: 100
+    icon: mdi:city
+        
+  - name: Amy's School
+    latitude: !secret AMYS_SCHOOL_LATITUDE
+    longitude: !secret AMYS_SCHOOL_LONGITUDE
+    radius: 100
+    icon: mdi:school
+        
+  - name: Paige's School
+    latitude: !secret PAIGES_SCHOOL_LATITUDE
+    longitude: !secret PAIGES_SCHOOL_LONGITUDE
+    radius: 100
+    icon: mdi:school
+        
+  - name: Megan's College
+    latitude: !secret MEGANS_COLLEGE_LATITUDE
+    longitude: !secret MEGANS_COLLEGE_LONGITUDE
+    radius: 100
+    icon: mdi:school
+ 
+ #====   MQTT    ====#
+
+ mqtt:
+    broker: 192.168.0.63
+    port: 1883
+    client_id: hass
+    keepalive: 60
+    username: !secret MQTT_USERNAME
+    password: !secret MQTT_PASSWORD
+        
+ #=====================================================#
+ #=================      INCLUDES     =================#
+ #=====================================================#
+
+ #====   DEVICES    ====#
+  
+ #  Devices (usually phones) are tracked for presence detection.
+ device_tracker: !include device_trackers.yaml
+
+ #====   SENSORS    ====#
+ sensor: !include sensors.yaml
+ 
+ #====   LIGHTS    ====#
+  
+ light: !include light.yaml
+
+ #====   GROUPS    ====#
+
+ group: !include groups.yaml
+
+ #====   NOTIFY    ====#
+
+ notify: !include notify.yaml
+
+ #====   SCENES    ====#
+
+ scene: !include scenes.yaml
+
+ #====   MEDIA PLAYERS    ====#
+
+ media_player: !include media_player.yaml
+
+ #====   WEBLINKS    ====#
+
+ weblink: !include weblink.yaml
+
+ #====   AUTOMATION    ====#
+
+ automation: !include_dir_list automation
+
+ #====   SCRIPTS    ====#
+
+ script: !include scripts.yaml
+
+ #====   SWITCHES    ====#
+
+ #  Switches are anything that can turn on or off. These can be hardware or software.
+ #switch: !include_dir_merge_list switches
+
+ #====   ZWAVE    ====#
+
+ zwave:
+    usb_path: /dev/ttyACM0
+    config_path: /srv/hass/hass_venv/lib/python3.4/site-packages/libopenzwave-0.3.1-py3.4-linux-armv7l.egg/config
+    
+ #====   IFTTT    ====#
+
+ ifttt:
+  key: IFTTT_API_KEY
+        
+  
+ #===================================================#
+ #=================      INPUTS     =================#
+ #===================================================#
+ 
+ input_boolean:
+   restart_hass:
+    initial: off
+    
+ #====================================================#
+ #=================      ENABLES     =================#
+ #====================================================#
+
+ # Allows you to issue voice commands from the frontend
+ #conversation:
+
+ # Enables the frontend
+ frontend:
+
+ # Wemo switch discovery
+ wemo:
+
+ # View all events in a logbook
+ logbook:
+
+ # Enables support for tracking state changes over time.
+ history:
+
+ # Track the sun
+ sun:
+
+ # Checks for available updates
+ updater:
+
+ # This enables HDMI CEC to turn devices on or off.
+ # hdmi_cec:
+ #  devices:
+ #   1: Pi Zero
+ #   2:
+ #     1: Fire TV Stick
+ #     2: Chromecast
+ #     3: Another Device

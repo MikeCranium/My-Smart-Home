@@ -1,0 +1,40 @@
+ #===========================================================#
+ #=================      MEDIA PLAYERS     ==================#
+ #===========================================================#
+
+ #====   CHROMECAST    ====#
+
+- platform: cast
+  host: 192.168.0.48
+  name: Bathroom Speakers
+
+- platform: cast
+  host: 192.168.0.31
+  name: Amy's Chromecast
+
+- platform: cast
+  host: 192.168.0.23
+  name: Megan's Chromecast
+
+- platform: cast
+  host: 192.168.0.60
+  name: Master Bedroom Speakers
+
+- platform: cast
+  host: 192.168.0.64
+  name: Kitchen Speakers
+
+- platform: cast
+  host: 192.168.0.61
+  name: Living Room Speakers
+
+ #====   LG TV WEBOS    ====#
+
+- platform: webostv
+  host: 192.168.0.10
+  name: Living Room TV
+
+ #====   PLEX    ====#
+
+- platform: plex
+

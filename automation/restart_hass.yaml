@@ -1,0 +1,12 @@
+ #=================================================================#
+ #=================      RESTART HASS BOOLEAN     =================#
+ #=================================================================#
+ 
+ alias: Restart HASS
+ trigger:
+   platform: state
+   entity_id: input_boolean.restart_hass
+   from: 'off'
+   to: 'on'
+ action:
+   service: homeassistant.restart

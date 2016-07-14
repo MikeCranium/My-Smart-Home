@@ -1,0 +1,16 @@
+ #============================================================#
+ #=================      BATHROOM MOTION     =================#
+ #============================================================#
+   
+ # This automation detects movement from my sensor and turn's on my under bath light's if the luminace is below 10.
+ alias: "Turn on Under Bath Lights with Motion"
+ trigger:
+   - platform: state
+     entity_id: binary_sensor.aeotec_zw100_multisensor_6_sensor_9
+     state: 'on'
+ condition:
+   - condition: numeric_state
+     entity_id: sensor.aeotec_zw100_multisensor_6_luminance_9
+     below: 20
+ action:
+   service: script.motion_bathroom

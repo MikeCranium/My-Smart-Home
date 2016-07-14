@@ -1,0 +1,14 @@
+ #================================================================#
+ #=================      UPDATE NOTIFICATION     =================#
+ #================================================================#
+
+ # This will notify me when a HA update becomes available.
+ 
+  alias: 'Update Available Notifications'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.mike
+    data:
+      message: 'Update for Home Assistant is available.'

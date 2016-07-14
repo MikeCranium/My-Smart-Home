@@ -1,0 +1,126 @@
+ #======================================================#
+ #=================      TAB VIEWG     =================#
+ #======================================================#
+
+ # default_view:
+ #  view: yes
+ #   entities:
+
+ Rooms:
+    view: yes
+    entities:
+    - group.living_room
+    - group.kitchen
+    - group.bathroom
+    - group.master_bedroom
+    - group.megans_bedroom
+    - group.amys_bedroom
+    - group.paiges_bedroom
+    - group.downstairs_hallway
+    
+ Family:
+    view: yes
+    entities:
+    - group.mike
+    - group.nicky
+
+ Media:
+    view: yes
+    entities:
+    - media_player.amys_room
+    - media_player.bathroom_speakers
+    - media_player.kitchen_speakers
+    - media_player.living_room_speakers
+    - media_player.megans_room
+    - media_player.mike__nickys_bedroom
+
+ System:
+    view: yes
+    entities:
+    - group.raspberry_pi
+    - group.network
+    - group.sabnzb
+    - group.plex_media_server
+    - input_boolean.restart_hass
+
+ #=======================================================#
+ #=================      TILE SETUP     =================#
+ #=======================================================#
+
+ Living Room:
+    - light.hue_bloom_1
+    - light.hue_bloom_2
+    - light.living_room_back_hue
+    - light.living_room_front_hue
+    - light.tv_led_strip
+
+ Kitchen:
+    - light.kitchen_hue
+
+ Master Bedroom:
+    - light.mike__nickys_bedroom_hue
+    - switch.aircon
+
+ Megan's Bedroom:
+    - light.megans_hue
+
+ Amy's Bedroom:
+    - light.amys_hue
+
+ Paige's Bedroom:
+    - light.paiges_hue
+
+ Downstair's Hallway:
+    - light.downstairs_hallway_hue
+
+ Bathroom:
+    - switch.bath_lights
+    - sensor.aeotec_zw100_multisensor_6_relative_humidity_9
+    - sensor.aeotec_zw100_multisensor_6_temperature_9
+    - sensor.aeotec_zw100_multisensor_6_luminance_9
+    
+ Mike:
+    - device_tracker.mike_mike
+    - sensor.mikes_evening_commute
+    - sensor.mikes_morning_commute
+    - sensor.mikes_gs7_battery
+
+ Nicky:
+    - device_tracker.nicky_nicky
+    - sensor.nickys_morning_commute
+    - sensor.nickys_evening_commute
+    - sensor.nickys_iphone_6s_battery
+    
+ Weather:
+    - sun.sun
+    - sensor.weather_summary
+    - sensor.weather_temperature
+    - sensor.weather_humidity
+
+ Raspberry Pi:
+    - sensor.glances_sensor_cpu_load
+    - sensor.glances_sensor_disk_use
+    - sensor.glances_sensor_ram_use
+    - sensor.glances_sensor_process_running
+    
+ SabNZB:
+    - sensor.sab_disk
+    - sensor.sab_disk_free
+    - sensor.sab_queue
+    - sensor.sab_speed
+    
+ Plex Media Server:
+    - sensor.plex_spy
+
+ Network:
+    - sensor.speedtest_upload
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - weblink.router
+    
+ Running Services:
+    - sensor.time__date
+    - sensor.process_glances
+    - sensor.process_mosquitto
+    - sensor.sab_status
+    

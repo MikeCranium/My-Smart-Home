@@ -1,0 +1,38 @@
+ #===================================================#
+ #=================      SCENES     =================#
+ #===================================================#
+
+- name: Disco
+  entities:
+    light.living_room_back_hue:
+      state: on
+      effect: colorloop
+      brightness: 255
+      transition: 5
+    light.living_room_front_hue:
+      state: on
+      effect: colorloop
+      brightness: 255
+      transition: 5
+    light.hue_bloom_1:
+      state: on
+      effect: colorloop
+      brightness: 255
+      transition: 5
+    light.hue_bloom_2:
+      state: on
+      effect: colorloop
+      brightness: 255
+      transition: 5
+    light.tv_led_strip:
+      state: on
+      effect: colorloop
+      brightness: 255
+      transition: 5
+
+- name: Sexy Time
+  entities:
+    light.mike__nickys_bedroom_hue:
+      state: on
+      brightness: 150
+      rgb_color: [128, 0, 128]

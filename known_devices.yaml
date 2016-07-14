@@ -1,0 +1,56 @@
+
+mike_mike:
+  name: Mike
+  mac: BT_2C:AE:2B:F4:93:66
+  picture: !secret MIKES_PROFILE_PICTURE
+  track: yes
+  hide_if_away: no
+
+nickysiphone6s:
+  name: Nicky
+  mac: BT_1C:5C:F2:F3:1F:EE
+  picture: !secret NICKYS_PROFILE_PICTURE
+  track: no
+  hide_if_away: no
+
+nicky_nicky:
+  name: Nicky
+  mac: BT_1C:5C:F2:F3:1F:EE
+  picture: !secret NICKYS_PROFILE_PICTURE
+  track: yes
+  hide_if_away: no
+
+iphone:
+  name: iPhone
+  mac: 
+  picture: 
+  track: no
+  hide_if_away: no
+
+ef5dbbbc5ebd4524ade9cceb168050fd:
+  name: ef5dbbbc5ebd4524ade9cceb168050fd
+  mac: 
+  picture: 
+  track: no
+  hide_if_away: no
+
+nokia_301:
+  name: Nokia 301
+  mac: BT_D4:8F:33:DE:23:E1
+  picture: 
+  track: no
+  hide_if_away: no
+
+lg_las160ba1:
+  name: LG LAS160B(A1)
+  mac: BT_08:EF:3B:CF:D6:A1
+  picture: 
+  track: no
+  hide_if_away: no
+
+megan_megan:
+  name: Megan
+  mac: BT_2C:F0:A2:44:AF:5C
+  picture: !secret MEGANS_PROFILE_PICTURE
+  track: yes
+  hide_if_away: no

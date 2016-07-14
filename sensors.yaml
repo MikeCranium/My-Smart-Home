@@ -1,0 +1,127 @@
+ #=====================================================#
+ #=================      SENSORS     ==================#
+ #=====================================================#
+
+ #==== TIME DATE ====#
+ 
+ - platform: time_date
+   display_options:
+     - 'time_date'
+
+ #====   FORCASTIO   ====#
+ 
+ - platform: forecast
+   api_key: !secret FORCASTIO_API_KEY
+   monitored_conditions:
+   - icon
+   - summary
+   - temperature
+   - humidity
+ 
+ #====   TORQUE    ====#
+
+ - platform: torque
+   name: Sky Van
+   email: !secret EMAIL_ADDRESS
+   
+ #====   GLANCES   ====#
+ 
+ - platform: glances
+   name: Glances sensor
+   host: localhost
+   port: 61208
+   resources:
+   - disk_use_percent
+   - memory_use_percent
+   - swap_use_percent
+   - processor_load
+   
+ #====   GOOGLE TRAVEL   ====#
+ 
+ - platform: google_travel_time
+   name: Nicky's Morning Commute
+   api_key: !secret GOOGLE_API_KEY
+   origin: !secret HOME_ADDRESS
+   destination: !secret NICKYS_WORK
+   options:
+     mode: driving
+     
+ - platform: google_travel_time
+   name: Nicky's Evening Commute
+   api_key: !secret GOOGLE_API_KEY
+   origin: !secret NICKYS_WORK
+   destination: !secret HOME_ADDRESS
+   options:
+     mode: driving
+     
+ - platform: google_travel_time
+   name: Mike's Morning Commute
+   api_key: !secret GOOGLE_API_KEY
+   origin: !secret HOME_ADDRESS
+   destination: !secret MIKES_DEPOT
+   options:
+     mode: driving
+     
+ - platform: google_travel_time
+   name: Mike's Evening Commute
+   api_key: !secret GOOGLE_API_KEY
+   origin: !secret MIKES_DEPOT
+   destination: !secret HOME_ADDRESS
+   options:
+     mode: driving
+   
+ #====   SAB NZB    ====#
+ 
+ - platform: sabnzbd
+   name: SAB
+   api_key: !secret SAB_API_KEY
+   base_url: !secret SAB_URL
+   monitored_variables:
+    - type: 'current_status'
+    - type: 'speed'
+    - type: 'queue_size'
+    - type: 'queue_remaining'
+    - type: 'disk_size'
+    - type: 'disk_free'
+    
+ #====   SPEEDTEST    ====#
+
+ - platform: speedtest
+   minute:
+   - 0
+   - 30
+   monitored_conditions:
+   - ping
+   - download
+   - upload
+   
+ #====   MQTT    ====#
+
+ - platform: mqtt
+   state_topic: MIKES_OWNTRACKS
+   name: "Mike's GS7 Battery"
+   unit_of_measurement: "%"
+   value_template: '{{ value_json.batt }}'
+
+ - platform: mqtt
+   state_topic: !secret NICKYS_OWNTRACKS
+   name: "Nicky's iPhone 6s Battery"
+   unit_of_measurement: "%"
+   value_template: "{{ value_json.batt }}"
+   
+  #====   SYSTEM MONITOR    ====#
+
+ - platform: systemmonitor
+   resources:
+     - type: process
+       arg: glances
+     - type: process
+       arg: mosquitto
+       
+ #====   TEMPLATES    ====#
+
+ - platform: template
+   sensors:
+     glances:
+       value_template: '{% if is_state("sensor.process_glances", "off") %}not running{% else %}running{% endif %}'
+       friendly_name: 'Glances'

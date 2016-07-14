@@ -1,0 +1,22 @@
+ #=============================================================#
+ #=================      CUSTOMISATIONS     ===================#
+ #=============================================================#
+
+ #====   BEDROOM    ====#
+
+ switch.aircon:
+  icon: mdi:air-conditioner
+  friendly_name: A/C
+
+ #====   LIVING ROOM    ====#
+
+
+
+ #====   BATHROOM    ====#
+
+ switch.bath_lights:
+  icon: mdi:lightbulb
+  friendly_name: Under Bath Lights
+ sensor.bathroom_humidity:
+  icon: mdi:water-percent
+  friendly_name: Bathroom Humidity

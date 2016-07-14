@@ -1,0 +1,124 @@
+ #======================================================#
+ #=================      SENSORS     ===================#
+ #======================================================#
+
+
+ #====   BOOLEANS    ====#
+ 
+ input_boolean.restart_hass:
+  friendly_name: Restart HASS
+  initial: off
+  icon: mdi:power
+  
+ #====   BEDROOM    ====#
+
+ #====   LIVING ROOM    ====#
+
+ #====   BATHROOM    ====#
+
+ sensor.aeotec_zw100_multisensor_6_temperature_9:
+  friendly_name: Bathroom Temperature
+ sensor.aeotec_zw100_multisensor_6_alarm_level_9:
+  friendly_name: Bathroom Alarm Level
+ sensor.aeotec_zw100_multisensor_6_alarm_type_9:
+  friendly_name: Bathroom Alarm Type
+ sensor.aeotec_zw100_multisensor_6_burglar_9:
+  friendly_name: Bathroom Burglar
+ sensor.aeotec_zw100_multisensor_6_luminance_9:
+  icon: mdi:brightness-6
+  friendly_name: Bathroom Luminance
+ sensor.aeotec_zw100_multisensor_6_relative_humidity_9:
+  icon: mdi:water-percent
+  friendly_name: Bathroom Humidity
+ sensor.aeotec_zw100_multisensor_6_sourcenodeid_9:
+  friendly_name: Bathroom Node ID
+ sensor.aeotec_zw100_multisensor_6_ultraviolet_9:
+  friendly_name: Bathroom UV Level
+
+ #====   RASPBERRY PI    ====#
+
+ sensor.glances_sensor_cpu_load:
+  icon: mdi:memory
+  friendly_name: CPU Load
+ sensor.glances_sensor_disk_use:
+  icon: mdi:server
+  friendly_name: Disk
+ sensor.glances_sensor_ram_use:
+  icon: mdi:server
+  friendly_name: Memory
+ sensor.glances_sensor_process_running:
+  icon: mdi:server
+  friendly_name: Number of Processes
+
+  #====   SYSTEM PROCESSES    ====#
+
+ sensor.process_glances:
+  icon: mdi:information-outline
+  friendly_name: Glances Status
+ sensor.process_mosquitto:
+  icon: mdi:information-outline
+  friendly_name: Mosquitto Status
+
+ #====   SPEEDTEST    ====#
+  
+ sensor.speedtest_download:
+  icon: mdi:download
+  friendly_name: Download
+ sensor.speedtest_upload:
+  icon: mdi:upload
+  friendly_name: Upload
+ sensor.speedtest_ping:
+  icon: mdi:timer
+  friendly_name: Ping
+  
+ #====   GOOGLE TRAVEL    ====#
+
+ sensor.nickys_morning_commute:
+  icon: mdi:car
+  friendly_name: Morning Commute
+ sensor.mikes_morning_commute:
+  icon: mdi:car
+  friendly_name: Morning Commute
+ sensor.nickys_evening_commute:
+  icon: mdi:car
+  friendly_name: Evening Commute
+ sensor.mikes_evening_commute:
+  icon: mdi:car
+  friendly_name: Evening Commute
+  
+ #====   SABNZB    ====#
+
+ sensor.sab_disk:
+  icon: mdi:server
+  friendly_name: Total Disk Space
+ sensor.sab_disk_free:
+  icon: mdi:server
+  friendly_name: Free Disk Space
+#sensor.sab_left:
+#icon: mdi: highway
+#friendly_name: 
+ sensor.sab_queue:
+  icon: mdi:highway
+  friendly_name: Download Queue
+ sensor.sab_speed:
+  icon: mdi:speedometer
+  friendly_name: Download Speed
+ sensor.sab_status:
+  icon: mdi:information-outline
+  friendly_name: SAB Status
+  
+  #====   FAMILY    ====#
+
+ sensor.nickys_iphone_6s_battery:
+  icon: mdi:cellphone-iphone
+  friendly_name: Nicky's iPhone Battery
+  
+ sensor.mikes_gs7_battery:
+  icon: mdi:cellphone-android
+  friendly_name: Mike's Galaxy Battery
+  
+ #====   WEATHER    ====#
+
+ sensor.weather_humidity:
+  icon: mdi:water-percent
+  friendly_name: Bathroom Humidity

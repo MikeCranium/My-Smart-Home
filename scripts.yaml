@@ -1,0 +1,9 @@
+ #=====================================================#
+ #=================      SCRIPTS     ==================#
+ #=====================================================#
+
+
+ #====   MOTION SCRIPTS    ====#
+ 
+ motion_bathroom: !include scripts/motion_bathroom.yaml
+ motion_bathroom_timer: !include scripts/motion_bathroom_timer.yaml

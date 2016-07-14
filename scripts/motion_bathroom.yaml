@@ -1,0 +1,14 @@
+ #=============================================================#
+ #=================      TIMED BATH LIGHT     =================#
+ #=============================================================#
+        
+ sequence:
+ - service: script.turn_off
+   data:
+     entity_id: script.motion_bathroom_timer
+ - service: switch.turn_on
+   data:
+     entity_id: switch.bath_lights
+ - service: script.turn_on
+   data:
+     entity_id: script.motion_bathroom_timer
